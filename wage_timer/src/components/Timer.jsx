@@ -25,7 +25,12 @@ export default function Timer({ targetTime, elapsedTime, setElapsedTime }) {
     const m = Math.floor((elapsedTime / 1000 / 60 / 60 - h) * 60);
     const s = Math.floor(((elapsedTime / 1000 / 60 / 60 - h) * 60 - m) * 60);
 
-    const formattedTime = `${h}:${m}:${s}`;
+    const hh = (h < 10) ? `0${h}` : h;
+    const mm = (m < 10) ? `0${m}` : m;
+    const ss = (s < 10) ? `0${s}` : s;
+
+    //const formattedTime = `${h}:${m}:${s}`;
+    const formattedTime = `${hh}:${mm}:${ss}`;
 
     return formattedTime;
   }

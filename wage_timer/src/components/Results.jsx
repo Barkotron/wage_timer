@@ -25,7 +25,7 @@ export default function Results({ elapsedTime, wage }) {
             {toTwoDecimals(amount / items[itemIndex].price)}{" "}
             {items[itemIndex].name}
           </p>
-          <button onClick={changeItemHandler}>Next</button>
+          {/*<button onClick={changeItemHandler}>Next</button>*/}
         </div>
       </div>
     );

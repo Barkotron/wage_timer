@@ -4,6 +4,7 @@ import WageInput from "./components/WageInput";
 import Results from "./components/Results";
 import { useState } from "react";
 import Header from "./components/Header";
+import { currencyFormatter } from "./util/formatting";
 
 function App() {
   const [enteredWage, setEnteredWage] = useState(0);
@@ -37,7 +38,7 @@ function App() {
   }
 
   return (
-    <>
+    <div>
       <Header></Header>
       {showWageInput ? (
         <WageInput
@@ -49,7 +50,7 @@ function App() {
         ></WageInput>
       ) : (
         <>
-          {/*<button onClick={showTimerHandler}>Start again</button>*/
+          {/*<button onClick={showTimerHandler}>Start again</button>*/}
           <div id="main-section">
             <div className="flex-column">
               <Timer
@@ -59,14 +60,14 @@ function App() {
               ></Timer>
               <div className="results-sub-section">
                 <h3>Wage</h3>
-                <p>${enteredWage}/h</p>
+                <p>{currencyFormatter.format(enteredWage)}/h</p>
               </div>
             </div>
             <Results elapsedTime={elapsedTime} wage={enteredWage}></Results>
           </div>
         </>
       )}
-    </>
+    </div>
   );
 }
 
