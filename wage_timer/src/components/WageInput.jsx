@@ -1,38 +1,38 @@
-import { useState } from "react";
-export default function WageInput() {
-  const [enteredWage, setEnteredWage] = useState(0);
-
-  function wageInputHandler(event) {
-    setEnteredWage(event.target.value);
-  }
-
+export default function WageInput({
+  wage,
+  time,
+  wageInput,
+  timeInput,
+  formSubmit,
+}) {
   return (
     <div>
       <p>--WAGE INPUT--</p>
 
-      <form>
+      <form onSubmit={formSubmit}>
         <label htmlFor="wage">Wage/h: </label>
         <input
           type="number"
           id="wage"
           name="wage"
-          onChange={wageInputHandler}
-          value={enteredWage}
+          required
+          onChange={wageInput}
+          value={wage}
         ></input>
 
-        <label htmlFor="time">Time: </label>
+        <label htmlFor="time">Hours: </label>
         <input
-          type="date"
+          type="number"
           id="time"
           name="time"
-          onChange={() => {}}
-          value={0}
+          required
+          onChange={timeInput}
+          value={time}
         ></input>
 
-        <span>
-          <p>{enteredWage}</p>
-          <button>Set</button>
-        </span>
+        <p>
+          <button type="submit">Go!</button>
+        </p>
       </form>
     </div>
   );
