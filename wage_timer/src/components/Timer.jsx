@@ -31,8 +31,8 @@ export default function Timer({ targetTime, elapsedTime, setElapsedTime }) {
   }
 
   return (
-    <div>
-      <p>--TIMER--</p>
+    <div className="results-sub-section">
+      <h3>Time worked</h3>
       <p>{formattedTime()}</p>
     </div>
   );

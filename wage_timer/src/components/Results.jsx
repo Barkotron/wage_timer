@@ -1,20 +1,33 @@
 import { currencyFormatter, toTwoDecimals } from "../util/formatting";
 import items from "../data/items";
+import { useState } from "react";
 
 export default function Results({ elapsedTime, wage }) {
-  function resultItem() {
-    const amount = (wage/60/60/1000) * (elapsedTime);
+  const [itemIndex, setItemIndex] = useState(0);
 
-    const index = 8;
+  function resultItem() {
+    const amount = (wage / 60 / 60 / 1000) * elapsedTime;
+
+    function changeItemHandler() {
+      setItemIndex((itemIndex + 1) % items.length);
+    }
 
     return (
-      <>
-        <p>You've been working hard! you have made:</p>
-        <p>{currencyFormatter.format(amount)}</p>
+      <div className="flex-column">
+        <div className="results-sub-section">
+          <h3>You've made</h3>
+          <p>{currencyFormatter.format(amount)}</p>
+        </div>
 
-        <p>That could get you: </p>
-        <p>{toTwoDecimals(amount/items[index].price)} {items[index].name}</p>
-      </>
+        <div className="results-sub-section">
+          <h3>That could get you </h3>
+          <p>
+            {toTwoDecimals(amount / items[itemIndex].price)}{" "}
+            {items[itemIndex].name}
+          </p>
+          <button onClick={changeItemHandler}>Next</button>
+        </div>
+      </div>
     );
   }
 

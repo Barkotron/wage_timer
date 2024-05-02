@@ -25,7 +25,7 @@ a:hover {
 body {
   margin: 0;
   display: flex;
-  place-items: center;
+  /*place-items: center;*/
   min-width: 320px;
   min-height: 100vh;
 }
@@ -65,4 +65,34 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+.centered{
+  display: flex;
+  place-items: center;
+}
+
+#main-section{
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-column{
+  display: flex;
+  flex-direction: column;
+  }
+
+.results-sub-section{
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+  border-radius: 10px;
+  border: solid black;
+  background: rgb(73, 77, 82);
+  padding: 10px;
+  min-width: 200px;
+  min-height: 175px;
+  width: auto;
 }

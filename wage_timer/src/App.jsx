@@ -3,6 +3,7 @@ import Timer from "./components/Timer";
 import WageInput from "./components/WageInput";
 import Results from "./components/Results";
 import { useState } from "react";
+import Header from "./components/Header";
 
 function App() {
   const [enteredWage, setEnteredWage] = useState(0);
@@ -15,7 +16,7 @@ function App() {
   }
 
   function timeInputHandler(event) {
-    const toMili = event.target.value*1000*60*60;
+    const toMili = event.target.value * 1000 * 60 * 60;
     setEnteredTime(toMili);
   }
 
@@ -37,6 +38,7 @@ function App() {
 
   return (
     <>
+      <Header></Header>
       {showWageInput ? (
         <WageInput
           wage={enteredWage}
@@ -47,9 +49,21 @@ function App() {
         ></WageInput>
       ) : (
         <>
-          <button onClick={showTimerHandler}>Start again</button>
-          <Timer targetTime={enteredTime * 1000} elapsedTime={elapsedTime} setElapsedTime={setElapsedTime}></Timer>
-          <Results elapsedTime={elapsedTime} wage={enteredWage}></Results>
+          {/*<button onClick={showTimerHandler}>Start again</button>*/
+          <div id="main-section">
+            <div className="flex-column">
+              <Timer
+                targetTime={enteredTime * 1000}
+                elapsedTime={elapsedTime}
+                setElapsedTime={setElapsedTime}
+              ></Timer>
+              <div className="results-sub-section">
+                <h3>Wage</h3>
+                <p>${enteredWage}/h</p>
+              </div>
+            </div>
+            <Results elapsedTime={elapsedTime} wage={enteredWage}></Results>
+          </div>
         </>
       )}
     </>
