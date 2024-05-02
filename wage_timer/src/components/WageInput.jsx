@@ -6,9 +6,8 @@ export default function WageInput({
   formSubmit,
 }) {
   return (
-    <div>
-      <p>--WAGE INPUT--</p>
-
+    <div className="results-sub-section">
+      <h3>-- Wage Input --</h3>
       <form onSubmit={formSubmit}>
         <label htmlFor="wage">Wage/h: </label>
         <input

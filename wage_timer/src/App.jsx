@@ -52,17 +52,15 @@ function App() {
         <>
           {/*<button onClick={showTimerHandler}>Start again</button>*/}
           <div id="main-section">
-            <div className="flex-column">
               <Timer
                 targetTime={enteredTime * 1000}
-                elapsedTime={elapsedTime}
+                elapsedTime={elapsedTime} 
                 setElapsedTime={setElapsedTime}
               ></Timer>
               <div className="results-sub-section">
                 <h3>Wage</h3>
                 <p>{currencyFormatter.format(enteredWage)}/h</p>
               </div>
-            </div>
             <Results elapsedTime={elapsedTime} wage={enteredWage}></Results>
           </div>
         </>

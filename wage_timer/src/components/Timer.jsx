@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { formattedTime } from "../util/formatting";
 
 export default function Timer({ targetTime, elapsedTime, setElapsedTime }) {
   useEffect(() => {
@@ -20,25 +21,12 @@ export default function Timer({ targetTime, elapsedTime, setElapsedTime }) {
     return () => clearInterval(interval);
   }, []);
 
-  function formattedTime() {
-    const h = Math.floor(elapsedTime / 1000 / 60 / 60);
-    const m = Math.floor((elapsedTime / 1000 / 60 / 60 - h) * 60);
-    const s = Math.floor(((elapsedTime / 1000 / 60 / 60 - h) * 60 - m) * 60);
-
-    const hh = (h < 10) ? `0${h}` : h;
-    const mm = (m < 10) ? `0${m}` : m;
-    const ss = (s < 10) ? `0${s}` : s;
-
-    //const formattedTime = `${h}:${m}:${s}`;
-    const formattedTime = `${hh}:${mm}:${ss}`;
-
-    return formattedTime;
-  }
+  const time = formattedTime(elapsedTime);
 
   return (
     <div className="results-sub-section">
       <h3>Time worked</h3>
-      <p>{formattedTime()}</p>
+      <p>{time}</p>
     </div>
   );
 }
