@@ -15,7 +15,8 @@ function App() {
   }
 
   function timeInputHandler(event) {
-    setEnteredTime(event.target.value);
+    const toMili = event.target.value*1000*60*60;
+    setEnteredTime(toMili);
   }
 
   function handleFormSubmit(event) {

@@ -1,8 +1,6 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 export default function Timer({ targetTime, elapsedTime, setElapsedTime }) {
-  //const [time, setTime] = useState(0);
-
   useEffect(() => {
     const interval = setInterval(() => {
       setElapsedTime((prevTime) => {
@@ -14,7 +12,7 @@ export default function Timer({ targetTime, elapsedTime, setElapsedTime }) {
         } else {
           newTime = prevTime + 100;
         }
-        console.log("timer");
+        //console.log("timer");
         return newTime;
       });
     }, 100);
@@ -22,10 +20,20 @@ export default function Timer({ targetTime, elapsedTime, setElapsedTime }) {
     return () => clearInterval(interval);
   }, []);
 
+  function formattedTime() {
+    const h = Math.floor(elapsedTime / 1000 / 60 / 60);
+    const m = Math.floor((elapsedTime / 1000 / 60 / 60 - h) * 60);
+    const s = Math.floor(((elapsedTime / 1000 / 60 / 60 - h) * 60 - m) * 60);
+
+    const formattedTime = `${h}:${m}:${s}`;
+
+    return formattedTime;
+  }
+
   return (
     <div>
       <p>--TIMER--</p>
-      <p>{elapsedTime / 1000}</p>
+      <p>{formattedTime()}</p>
     </div>
   );
 }

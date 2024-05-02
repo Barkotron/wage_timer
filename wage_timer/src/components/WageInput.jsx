@@ -27,7 +27,7 @@ export default function WageInput({
           name="time"
           required
           onChange={timeInput}
-          value={time}
+          //value={time}
         ></input>
 
         <p>

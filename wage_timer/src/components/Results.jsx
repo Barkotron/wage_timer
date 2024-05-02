@@ -1,8 +1,14 @@
+import { currencyFormatter } from "../util/formatting";
 export default function Results({ elapsedTime, wage }) {
   function resultItem() {
-    const amount = Math.round((wage*(elapsedTime/1000)) * 10 ** 2) / 10 ** 2;
-    
-    return <p>You've been working hard! you have made ${amount}!</p>;
+    const amount = (wage/60/60/1000) * (elapsedTime);
+
+    return (
+      <>
+        <p>You've been working hard! you have made:</p>
+        <p>{currencyFormatter.format(amount)}</p>
+      </>
+    );
   }
 
   return resultItem();
