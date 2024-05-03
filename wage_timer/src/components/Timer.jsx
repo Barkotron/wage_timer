@@ -23,11 +23,11 @@ export default function Timer({ targetTime, elapsedTime, setElapsedTime }) {
   const time = formattedTime(elapsedTime);
 
   return (
-    <div className="results-sub-section progress-bar">
+    <div className="results-sub-section">
       <h3>Time worked</h3>
       <p>{time}</p>
       {/*<input type="range" min={0} max={targetTime} value={elapsedTime}></input>*/}
-      <ProgressBar percent={elapsedTime/targetTime}></ProgressBar>
+      <ProgressBar percent={(elapsedTime/targetTime)*100}></ProgressBar>
     </div>
     
   );
