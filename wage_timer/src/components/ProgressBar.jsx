@@ -3,7 +3,7 @@ export default function ProgressBar({ percent }) {
     height: "32px",
     width: "100%",
     backgroundColor: "#e0e0de",
-    borderRadius: "16px",
+    borderRadius: "8px",
   };
 
   const fillerStyles = {
@@ -11,6 +11,7 @@ export default function ProgressBar({ percent }) {
     width: `${percent}%`,
     backgroundColor: "lightgreen",
     borderRadius: "inherit",
+    
   };
 
   return (
