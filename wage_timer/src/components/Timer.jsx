@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { formattedTime } from "../util/formatting";
+import ProgressBar from "./ProgressBar";
 
 export default function Timer({ targetTime, elapsedTime, setElapsedTime }) {
   useEffect(() => {
@@ -22,9 +23,12 @@ export default function Timer({ targetTime, elapsedTime, setElapsedTime }) {
   const time = formattedTime(elapsedTime);
 
   return (
-    <div className="results-sub-section">
+    <div className="results-sub-section progress-bar">
       <h3>Time worked</h3>
       <p>{time}</p>
+      {/*<input type="range" min={0} max={targetTime} value={elapsedTime}></input>*/}
+      <ProgressBar percent={elapsedTime/targetTime}></ProgressBar>
     </div>
+    
   );
 }

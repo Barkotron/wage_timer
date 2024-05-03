@@ -79,7 +79,7 @@ button:focus-visible {
   grid-template-columns: auto auto;
   grid-template-rows: auto auto;
   grid-gap: 4px;
-  margin: 8px;
+  margin: 16px;
 }
 
 #header {
@@ -96,7 +96,8 @@ button:focus-visible {
   margin-top: 32px;
 }
 
-.results-sub-section p, .results-sub-section label {
+.results-sub-section p,
+.results-sub-section label {
   color: #1c1c29;
   font-size: x-large;
   font-weight: 700;
@@ -110,11 +111,11 @@ input::-webkit-inner-spin-button {
 }
 
 /* Firefox */
-input[type=number] {
+input[type="number"] {
   -moz-appearance: textfield;
 }
 
-input[type=number]{
+input[type="number"] {
   background-color: #d9d9d9;
   color: #1c1c29;
   max-width: 50px;
@@ -134,7 +135,6 @@ input[type=number]{
   width: auto;
 }
 
-
 .clickable-section {
   transition: 0.2s;
 }
@@ -144,17 +144,37 @@ input[type=number]{
   transform: scale(1.05);
 }
 
-
-#wage-input-form{
+#wage-input-form {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-.form-field{
-
+.form-field {
   text-align: right;
   padding-right: 68px;
 }
 
+#start-over {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 1.2em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
 
+#start-over:hover {
+  border-color: #646cff;
+}
+
+#go {
+  margin-top: 8px;
+}
+
+.progress-bar:before{
+  background-color: green;
+}

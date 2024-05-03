@@ -10,10 +10,10 @@ export default function WageInput({ formSubmit }) {
 
         <div className="form-field">
           <label htmlFor="time">Hours: </label>
-          <input type="number" id="time" name="time" required step="0.5" min="0" ></input>
+          <input type="number" id="time" name="time" required step="0.05" min="0" ></input>
         </div>
 
-        <div>
+        <div id="go">
           <button type="submit">Go!</button>
         </div>
       </form>

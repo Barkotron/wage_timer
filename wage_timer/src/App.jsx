@@ -42,7 +42,7 @@ function App() {
       ) : (
         <>
           <div>
-            <button onClick={restartHandler}>Start Over</button>
+            <button id="start-over" onClick={restartHandler}>Start Over</button>
           </div>
           <div id="main-section">
             <Timer

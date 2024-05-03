@@ -30,7 +30,7 @@ export default function Results({ elapsedTime, wage }) {
           className="results-sub-section clickable-section"
           onClick={changeItemHandler}
         >
-          <h3>That could get you </h3>
+          <h3>You could get</h3>
           <p>
             {toTwoDecimals(amount / items[itemIndex].price)}{" "}
             {items[itemIndex].name}
