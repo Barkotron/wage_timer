@@ -50,7 +50,6 @@ function App() {
         ></WageInput>
       ) : (
         <>
-          {/*<button onClick={showTimerHandler}>Start again</button>*/}
           <div id="main-section">
               <Timer
                 targetTime={enteredTime * 1000}

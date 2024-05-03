@@ -8,6 +8,10 @@ export default [
     price: 59.99,
   },
   {
+    name: "Cases of beer",
+    price: 28.99,
+  },
+  {
     name: "Muffins",
     price: 3.25,
   },
@@ -16,16 +20,12 @@ export default [
     price: 2.5,
   },
   {
-    name: "Beers",
-    price: 6.5,
-  },
-  {
-    name: "Cases of beer",
-    price: 28.99,
-  },
-  {
     name: "6-Packs of beer",
     price: 12.25,
+  },
+  {
+    name: "Beers",
+    price: 6.5,
   },
   {
     name: "Copies of Skyrim",

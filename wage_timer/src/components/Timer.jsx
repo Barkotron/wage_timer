@@ -9,11 +9,9 @@ export default function Timer({ targetTime, elapsedTime, setElapsedTime }) {
         if (prevTime >= targetTime) {
           newTime = targetTime;
           clearInterval(interval);
-          console.log("interval cleared");
         } else {
           newTime = prevTime + 100;
         }
-        //console.log("timer");
         return newTime;
       });
     }, 100);

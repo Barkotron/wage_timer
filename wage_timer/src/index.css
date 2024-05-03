@@ -135,12 +135,25 @@ input[type=number]{
 
 
 .clickable-section {
-  transition: transform 0.2s;
+  transition: 0.2s;
 }
 
 .clickable-section:hover {
   border-color: #646cff;
   transform: scale(1.05);
+}
+
+
+#wage-input-form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.form-field{
+
+  text-align: right;
+  padding-right: 68px;
 }
 
 

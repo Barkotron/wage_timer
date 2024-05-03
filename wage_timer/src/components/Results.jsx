@@ -1,9 +1,16 @@
 import { currencyFormatter, toTwoDecimals } from "../util/formatting";
 import items from "../data/items";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Results({ elapsedTime, wage }) {
   const [itemIndex, setItemIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setItemIndex( (prevIndex) => (prevIndex + 1) % items.length);
+    }, 5000)
+    return () => clearInterval(interval);
+  }, []);
 
   function resultItem() {
     const amount = (wage / 60 / 60 / 1000) * elapsedTime;
@@ -28,7 +35,6 @@ export default function Results({ elapsedTime, wage }) {
             {toTwoDecimals(amount / items[itemIndex].price)}{" "}
             {items[itemIndex].name}
           </p>
-          {/*<button onClick={changeItemHandler}>Next</button>*/}
         </div>
       </>
     );
