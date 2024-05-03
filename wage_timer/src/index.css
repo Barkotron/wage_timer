@@ -79,6 +79,7 @@ button:focus-visible {
   grid-template-columns: auto auto;
   grid-template-rows: auto auto;
   grid-gap: 4px;
+  margin: 8px;
 }
 
 #header {

@@ -17,7 +17,7 @@ export default function Timer({ targetTime, elapsedTime, setElapsedTime }) {
     }, 100);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [targetTime]);
 
   const time = formattedTime(elapsedTime);
 
