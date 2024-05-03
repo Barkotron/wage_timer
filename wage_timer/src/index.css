@@ -142,6 +142,7 @@ input[type="number"] {
 .clickable-section:hover {
   border-color: #646cff;
   transform: scale(1.05);
+  cursor: pointer;
 }
 
 #wage-input-form {
@@ -157,8 +158,8 @@ input[type="number"] {
 
 #start-over {
   border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 1.2em 1.2em;
+  border: 2px solid transparent;
+  padding: 1em 1em;
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;

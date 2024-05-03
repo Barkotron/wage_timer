@@ -63,4 +63,16 @@ export default [
     name: "Snowblowers",
     price: 999.99,
   },
+  {
+    name: "TVs",
+    price: 1499.99,
+  },
+  {
+    name: "Lamps",
+    price: 29.99,
+  },
+  {
+    name: "T-Shirts",
+    price: 14.99,
+  },
 ];
